@@ -14,31 +14,24 @@
     </div>
   <% end %>
  
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Type</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Date</label>
-    <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-  </div>
+<div class="form-group">
+    <%= form.label Activity %>
+    <%= form.text_field(:name) %>
+</div>
 
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Duration</label>
-    <input type="time" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-  </div>
+<div class="form-group">
+<%= form.label Date %>
+<%= form.date_field(:date)  %>
+</div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+<div class="form-group">
+<%= form.label :duration %>
+<%= form.time_field(:duration) %>
+</div>
 
-</form>
+<div class="actions" >
+<%= form.submit class: "btn btn-primary"%>
+<%= link_to 'Back', activities_path, class: "btn btn-primary" %>
+</div>
  
 <% end %>

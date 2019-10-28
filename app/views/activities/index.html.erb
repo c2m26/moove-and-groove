@@ -1,6 +1,8 @@
 <h1>List of activities</h1>
 
-<table>
+<div class="container">
+
+<table class="table">
   <tr>
     <th>Type</th>
     <th>Date</th>
@@ -10,13 +12,16 @@
  
   <% @activities.each do |activity| %>
     <tr>
-      <td><%= activity.title %></td>
-      <td><%= activity.text %></td>
-      <td><%= link_to 'Show', activity_path(activity) %></td>
-      <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-       <td><%= link_to 'Destroy', activity_path(activity),
+      <td><%= activity.name %></td>
+      <td><%= activity.date %></td>
+      <td><%= activity.duration %></td>
+      <td><%= link_to 'Show', activity_path(activity), class: "btn btn-secondary" %></td>
+      <td><%= link_to 'Edit', edit_activity_path(activity), class: "btn btn-secondary" %></td>
+      <td><%= link_to 'Destroy', activity_path(activity), class: "btn btn-danger",
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
+
+</div>
