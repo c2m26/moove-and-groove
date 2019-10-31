@@ -1,7 +1,8 @@
 class ActivitiesController < ApplicationController
-
+    
     def index
         @activities = Activity.all
+    
     end
 
     def show
@@ -10,6 +11,7 @@ class ActivitiesController < ApplicationController
 
     def new
         @activity = Activity.new
+        
     end
 
     def edit
@@ -18,6 +20,8 @@ class ActivitiesController < ApplicationController
 
     def create
         @activity = Activity.new(activity_params)
+        @activity.user = current_user
+
         if @activity.save
             redirect_to @activity
         else
