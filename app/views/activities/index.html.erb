@@ -12,19 +12,19 @@
   </tr>
  
   <% @activities.each do |activity| %>
-  <% if activity.user == current_user%>
-    <tr>
-      <td><%= activity.name %></td>
-      <td><%= activity.date %></td>
-      <td><%= activity.duration %></td>
-      <td><%= activity.user.first_name + " " + activity.user.last_name %></td>
-      <td><%= link_to 'Show', activity_path(activity), class: "btn btn-secondary" %></td>
-      <td><%= link_to 'Edit', edit_activity_path(activity), class: "btn btn-secondary" %></td>
-      <td><%= link_to 'Destroy', activity_path(activity), class: "btn btn-danger",
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-<%end%>
+    <% if activity.user == current_user%>
+      <tr>
+        <td><%= activity.name %></td>
+        <td><%= activity.date %></td>
+        <td><%= activity.duration %></td>
+        <td><%= activity.user.first_name + " " + activity.user.last_name %></td>
+        <td><%= link_to 'Show', activity_path(activity), class: "btn btn-secondary" %></td>
+        <td><%= link_to 'Edit', edit_activity_path(activity), class: "btn btn-secondary" %></td>
+        <td><%= link_to 'Destroy', activity_path(activity), class: "btn btn-danger",
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <%end%>
   <% end %>
 </table>
 
