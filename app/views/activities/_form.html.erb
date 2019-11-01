@@ -1,4 +1,4 @@
-<%= form_with model: @activity, local: true do |form| %>
+<%= form_with model: @activity, local: true do |f| %>
  
   <% if @activity.errors.any? %>
     <div id="error_explanation">
@@ -15,23 +15,74 @@
   <% end %>
  
 <div class="form-group">
-    <%= form.label Activity %>
-    <%= form.text_field(:name) %>
+  <h2>Activity </h2>
+  <div class="radio-button-selection d-flex flex-wrap justify-content-around">
+    <div>
+      <%= f.radio_button(:name, 'Swiming')%>
+      <%= f.label(:name_swiming, 'Swiming', class: "btn btn-primary") %>
+    </div>
+
+    <div>
+      <%= f.radio_button(:name, 'Running')%>
+      <%= f.label(:name_running, 'Running', class: "btn btn-primary") %>
+    </div>
+
+    <div>
+      <%= f.radio_button(:name, 'Walking')%>
+      <%= f.label(:name_walking, 'Walking', class: "btn btn-primary") %>
+    </div>
+
+    <div>
+      <%= f.radio_button(:name, 'Cycling')%>
+      <%= f.label(:name_cycling, 'Cycling', class: "btn btn-primary") %>
+    </div>
+
+    <div>
+      <%= f.radio_button(:name, 'Eliptical')%>
+      <%= f.label(:name_eliptical, 'Eliptical', class: "btn btn-primary") %>
+    </div>
+
+    <div>
+      <%= f.radio_button(:name, 'Mountain Biking')%>
+      <%= f.label(:name_mountain_biking, 'Mountain Biking', class: "btn btn-primary") %>
+    </div>
+
+    <div>
+      <%= f.radio_button(:name, 'Rowing')%>
+      <%= f.label(:name_rowing, 'Rowing', class: "btn btn-primary") %>
+    </div>
+
+    <div>
+      <%= f.radio_button(:name, 'Hiking')%>
+      <%= f.label(:name_hiking, 'Hiking', class: "btn btn-primary") %>
+    </div>
+
+    <div>
+      <%= f.radio_button(:name, 'Downhill Skying')%>
+      <%= f.label(:name_downhill_skying, 'Downhill Skying', class: "btn btn-primary") %>
+    </div>
+
+    <div>
+      <%= f.radio_button(:name, 'Snowboarding')%>
+      <%= f.label(:name_snowboarding, 'Snowboarding', class: "btn btn-primary") %>
+    </div>
+    
+
+  </div>
 </div>
 
 <div class="form-group">
-<%= form.label Date %>
-<%= form.date_field(:date)  %>
+  <%= f.label Date %>
+  <%= f.date_field(:date)  %>
 </div>
 
 <div class="form-group">
-<%= form.label :duration %>
-<%= form.time_field(:duration) %>
+  <%= f.label :duration %>
+  <%= f.time_field(:duration) %>
 </div>
 
 <div class="actions" >
-<%= form.submit class: "btn btn-primary"%>
-<%= link_to 'Back', activities_path, class: "btn btn-primary" %>
+  <%= f.submit class: "btn btn-primary"%>
 </div>
  
 <% end %>
