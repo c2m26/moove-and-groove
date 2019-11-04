@@ -14,16 +14,8 @@
 
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 
- @import "bootstrap";
-
+@import "bootstrap";
+@import 'styles'
 
  
 
-.radio-button-selection input[type="radio"]{
-    position: absolute;
-    display: none;
-}
-
-.radio-button-selection label{
-//    display: inline-block;
-}

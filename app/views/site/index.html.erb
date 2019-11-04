@@ -1,2 +1,38 @@
-<h1>Site#index</h1>
-<p>Find me in app/views/site/index.html.erb</p>
+<div class="jumbotron jumbotron-fluid vh-100 fixed-top">
+    <div class="container m-auto">
+        <h1 class="display-4"><span class="highlight">Bring the Groove and join the Move</span></h1>
+        <p class="lead"><span class="highlight">Track your activities and establish new limits<span class="highlight"></p>
+        <a href=<%=new_activity_path%> class="btn btn-warning btn-lg">New Activity</a>
+    </div>
+</div>
+
+<div id="padding-wrapper">
+    <div clas="container-fluid" id="about">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <h1>Move + Groove</h1>
+                <h1>=</h1>
+                <h1>Join the movement</h1>
+                <p>bla bla bla bla</p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <%= image_tag "runningvector_md.jpeg"%>
+            </div>
+        </div>
+    </div>
+
+    <div clas="container-fluid bg">
+    <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <img src="uphill.jpeg" class="mx-auto">
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <h2>At anytime, anywhere.</h2>
+                <p>Keep track of your workouts and challenge your limits</p>
+                <p>Move and Groove is the leading activity tracking webapp with</p>
+                <p>Over 10 activities supported</p>
+                <p>More than 100 000 active users</p>
+            </div>
+    </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-  <a class="navbar-brand" href="/">Move and Groove</a>
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+  <a class="navbar-brand" href="/"> <%= image_tag "movegroove-logo-sm.png" %> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,7 +9,7 @@
         <a class="nav-link" href='/'>Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#about">About</a>
       </li>
       <% if current_user %>
       <li class="nav-item">
@@ -22,9 +22,20 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <% if current_user %>
-        <li class="nav-item font-weight-bold">
-          Hello <%= current_user.first_name%>
+        <li class="nav-item dropdown font-weight-bold">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Hello <%= current_user.first_name%>
+          </a>
+        
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Profile</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Add Activity</a>
+            <a class="dropdown-item" href="#">List Activities</a>
+          </div>
+
         </li>
+
         <li class="nav-item">
           <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "btn btn-danger mr-auto m-2"%>
         </li>
@@ -39,3 +50,5 @@
     </ul>
   </div>
 </nav>
+
+
