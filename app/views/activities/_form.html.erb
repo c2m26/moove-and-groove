@@ -1,88 +1,99 @@
-<%= form_with model: @activity, local: true do |f| %>
- 
-  <% if @activity.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@activity.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @activity.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+<div class="container">
+  <div class="card col-xl-12 col-lg-10 col-md-10 col-sm-10 col-10 mt-5 mx-auto shadow p-3 mb-5 bg-white rounded">
+    <div class="card-body mx-auto">
+      <%= form_with model: @activity, local: true do |f| %>
+        
+          <% if @activity.errors.any? %>
+            <div id="error_explanation">
+              <h2>
+                <%= pluralize(@activity.errors.count, "error") %> prohibited
+                this article from being saved:
+              </h2>
+              <ul>
+                <% @activity.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        
+        <h2 class="card-title text-primary">Activity</h2>
+
+        <div class="form-group">
+          <div class="radio-button-selection d-flex flex-wrap justify-content-between">
+            <div>
+              <%= f.radio_button(:name, 'Swiming')%>
+              <%= f.label(:name_swiming, 'Swiming', class: "btn btn-primary") %>
+            </div>
+
+            <div>
+              <%= f.radio_button(:name, 'Running')%>
+              <%= f.label(:name_running, 'Running', class: "btn btn-primary") %>
+            </div>
+
+            <div>
+              <%= f.radio_button(:name, 'Walking')%>
+              <%= f.label(:name_walking, 'Walking', class: "btn btn-primary") %>
+            </div>
+
+            <div>
+              <%= f.radio_button(:name, 'Cycling')%>
+              <%= f.label(:name_cycling, 'Cycling', class: "btn btn-primary") %>
+            </div>
+
+            <div>
+              <%= f.radio_button(:name, 'Eliptical')%>
+              <%= f.label(:name_eliptical, 'Eliptical', class: "btn btn-primary") %>
+            </div>
+
+            <div>
+              <%= f.radio_button(:name, 'Mountain Biking')%>
+              <%= f.label(:name_mountain_biking, 'Mountain Biking', class: "btn btn-primary") %>
+            </div>
+
+            <div>
+              <%= f.radio_button(:name, 'Rowing')%>
+              <%= f.label(:name_rowing, 'Rowing', class: "btn btn-primary") %>
+            </div>
+
+            <div>
+              <%= f.radio_button(:name, 'Hiking')%>
+              <%= f.label(:name_hiking, 'Hiking', class: "btn btn-primary") %>
+            </div>
+
+            <div>
+              <%= f.radio_button(:name, 'Downhill Skying')%>
+              <%= f.label(:name_downhill_skying, 'Downhill Skying', class: "btn btn-primary") %>
+            </div>
+
+            <div>
+              <%= f.radio_button(:name, 'Snowboarding')%>
+              <%= f.label(:name_snowboarding, 'Snowboarding', class: "btn btn-primary") %>
+            </div>
+            
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label Date %>
+          <%= f.date_field(:date)  %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :duration %>
+          <%= f.time_field(:duration) %>
+        </div>
+
+        <div class="actions" >
+          <%= f.submit class: "btn btn-secondary mr-2"%>
+          <%= link_to 'Back', activities_path, class: "btn btn-secondary" %>
+        </div>
+        
         <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-<div class="form-group">
-  <h2>Activity </h2>
-  <div class="radio-button-selection d-flex flex-wrap justify-content-around">
-    <div>
-      <%= f.radio_button(:name, 'Swiming')%>
-      <%= f.label(:name_swiming, 'Swiming', class: "btn btn-primary") %>
-    </div>
-
-    <div>
-      <%= f.radio_button(:name, 'Running')%>
-      <%= f.label(:name_running, 'Running', class: "btn btn-primary") %>
-    </div>
-
-    <div>
-      <%= f.radio_button(:name, 'Walking')%>
-      <%= f.label(:name_walking, 'Walking', class: "btn btn-primary") %>
-    </div>
-
-    <div>
-      <%= f.radio_button(:name, 'Cycling')%>
-      <%= f.label(:name_cycling, 'Cycling', class: "btn btn-primary") %>
-    </div>
-
-    <div>
-      <%= f.radio_button(:name, 'Eliptical')%>
-      <%= f.label(:name_eliptical, 'Eliptical', class: "btn btn-primary") %>
-    </div>
-
-    <div>
-      <%= f.radio_button(:name, 'Mountain Biking')%>
-      <%= f.label(:name_mountain_biking, 'Mountain Biking', class: "btn btn-primary") %>
-    </div>
-
-    <div>
-      <%= f.radio_button(:name, 'Rowing')%>
-      <%= f.label(:name_rowing, 'Rowing', class: "btn btn-primary") %>
-    </div>
-
-    <div>
-      <%= f.radio_button(:name, 'Hiking')%>
-      <%= f.label(:name_hiking, 'Hiking', class: "btn btn-primary") %>
-    </div>
-
-    <div>
-      <%= f.radio_button(:name, 'Downhill Skying')%>
-      <%= f.label(:name_downhill_skying, 'Downhill Skying', class: "btn btn-primary") %>
-    </div>
-
-    <div>
-      <%= f.radio_button(:name, 'Snowboarding')%>
-      <%= f.label(:name_snowboarding, 'Snowboarding', class: "btn btn-primary") %>
     </div>
     
 
   </div>
 </div>
 
-<div class="form-group">
-  <%= f.label Date %>
-  <%= f.date_field(:date)  %>
-</div>
-
-<div class="form-group">
-  <%= f.label :duration %>
-  <%= f.time_field(:duration) %>
-</div>
-
-<div class="actions" >
-  <%= f.submit class: "btn btn-primary"%>
-</div>
- 
-<% end %>
