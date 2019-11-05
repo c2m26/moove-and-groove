@@ -11,14 +11,6 @@
       <li class="nav-item">
         <a class="nav-link" href="#about">About</a>
       </li>
-      <% if current_user %>
-      <li class="nav-item">
-        <%= link_to 'New Activity', new_activity_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Historic', activities_path, class: "nav-link"  %>
-      </li>
-      <%end%>
     </ul>
     <ul class="navbar-nav ml-auto">
       <% if current_user %>
@@ -41,10 +33,10 @@
         </li>
         <% else %>
         <li class="nav-item">
-          <%= link_to 'Log In', new_user_session_path, class: "btn btn-primary mr-auto m-2"%>
+          <%= link_to 'Log In', new_user_session_path, class: "nav-item nav-link"%>
         </li>
         <li class="nav-item">
-          <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary mr-auto m-2"%>
+          <%= link_to 'Sign Up', new_user_registration_path, class: "nav-item nav-link"%>
         </li>
       <%end%>
     </ul>
