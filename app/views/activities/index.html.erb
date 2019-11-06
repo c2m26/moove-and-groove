@@ -1,5 +1,5 @@
 <div class="container col-xl-6 col-lg-9 col-md-9 col-sm-10 col-11">
-  <div class="card mt-5 shadow p-3 mb-5 bg-white rounded ">
+  <div class="card shadow p-3 mb-5 bg-white rounded ">
       <div class= "card-body mx-auto">
   
       <h2 class="card-title text-primary"> Your activities</h2>
@@ -21,7 +21,7 @@
               <tr>
                 <td class="align-middle"><%= activity.name %></td>
                 <td class="align-middle"><%= activity.date %></td>
-                <td class="align-middle"><%= activity.duration %></td>
+                <td class="align-middle"><time datetime="<%= activity.duration %>"></time></td>
                 <td class="align-middle"><%= link_to 'Show', activity_path(activity), class: "btn btn-primary btn-sm" %></td>
                 <td class="align-middle"><%= link_to 'Edit', edit_activity_path(activity), class: "btn btn-primary btn-sm" %></td>
                 <td class="align-middle"><%= link_to 'Delete', activity_path(activity), class: "btn btn-danger btn-sm",

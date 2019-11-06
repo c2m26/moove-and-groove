@@ -1,7 +1,7 @@
 <div class="container">
 
-  <div class="card mt-5 shadow p-3 mb-5 bg-white rounded">
-    <div class= "card-body mx-auto">
+  <div class="card shadow p-3 mb-5 bg-white rounded">
+    <div class= "card-body ">
       <h2 class="card-title">Sign up</h2>
       
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -10,7 +10,7 @@
         <div class="form-row">
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-group">
             <%= f.label :first_name, class: "mr-2"%>
-            <%= f.text_field :first_name, autofocus: true, class: "form-control mr-4", placeholder:"John" %><br/>
+            <%= f.text_field :first_name, autofocus: true, class: "form-control", placeholder:"John" %>
           </div>
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-group">
             <%= f.label :last_name, class: "mr-2"  %>
@@ -19,51 +19,49 @@
         </div>
 
         <div class="form-row">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-group">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 form-group form-inline">
             <%= f.label :birth_Date, class: "mr-2" %>
             <%= f.date_select :birth_Date, {:start_year=>1920}, {class: "form-control"} %>
-          </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-group">
-            <%= f.label 'Gender', class: "mr-2" %>
-            <%= f.select(:sex, options_for_select([['Male', 1], ['Female', 2], ['Neutral', 3]]), {}, {class: "form-control"}) %>
           </div>
         </div>
 
         <div class="form-row">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-inline">
+          <div class="col-xl-5 col-lg-4 col-md-4 col-sm-4 col-12 form-group form-inline">
             <%= f.label :height, class: "mr-2" %>
-            <%= f.number_field :height, class: "form-control mr-2", placeholder:"177" %>
-            <small id="heightlHelp" class="form-text text-muted">cm</small>
+            <%= f.number_field :height, class: "form-control mr-2", placeholder:"in cm" %>
           </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-inline">
+          <div class="col-xl-5 col-lg-4 col-md-4 col-sm-4 col-12 form-group form-inline">
             <%= f.label :weight, class: "mr-2" %>
-            <%= f.number_field :weight, class: "form-control mr-2", placeholder:"77" %>
-            <small id="heightlHelp" class="form-text text-muted">kg</small>
+            <%= f.number_field :weight, class: "form-control mr-2", placeholder:"in kg" %>
+          </div>
+          <div class="col-xl-2 col-lg-4 col-md-4 col-sm-4 col-12 form-group form-inline">
+            <%= f.label 'Gender', class: "mr-2" %>
+            <%= f.select(:sex, options_for_select([['Male', 1], ['Female', 2], ['Neutral', 3]]), {}, {class: "form-control"}) %>
           </div>
         </div>
         
         <div class="form-row">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-group">
             <%= f.label :email, class: "mr-2" %>
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mr-4" %>
           </div>
         </div>  
         
         <div class="form-row">  
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-group">
             <%= f.label :password, class: "mr-2" %>
             <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %>
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control mr-4" %>
           </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-group">
             <%= f.label :password_confirmation, class: "mr-2" %><br />
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
           </div>
         </div>
 
-        <div class="actions">
+        <div class="actions form-group">
           <%= f.submit "Submit", class: "btn btn-primary mr-2"%>
           <%= link_to 'Back', root_path, class: "btn btn-primary" %>
         </div>

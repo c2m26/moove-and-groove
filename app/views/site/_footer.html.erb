@@ -1,0 +1,25 @@
+<footer class="container-fluid bg-dark">
+    <div class="container">
+        <div id="footer" class="nav p-1">
+            <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12 nav">
+                <a class="nav-link" href='/'>Home</a>
+                <a class="nav-link" href="/#about">About</a>
+                <% if current_user %>
+                <a href=<%=new_activity_path%> class="nav-item nav-link">New Activity</a>
+                <%= link_to 'Activity Tracker', activities_path, class: "nav-item nav-link" %>
+                <%else%>
+                <%= link_to 'Log In', new_user_session_path, class: "nav-item nav-link"%>
+                <%= link_to 'Sign Up', new_user_registration_path, class: "nav-item nav-link"%>
+                <%end%>
+            </div>
+        
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 nav ml-auto">
+                <a class="nav-item nav-link fab fa-youtube" href="www.youtube.com" target="blank"></a>
+                <a class="nav-link fab fa-youtube" href="www.youtube.com" target="blank"></a>
+                <a class="nav-link fab fa-youtube" href="www.youtube.com" target="blank"></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+

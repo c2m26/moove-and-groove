@@ -9,25 +9,19 @@
         <a class="nav-link" href='/'>Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="/#about">About</a>
       </li>
+      <% if user_signed_in?%>
+        <a href=<%=new_activity_path%> class="nav-item nav-link">New Activity</a>
+        <%= link_to 'Activity Tracker', activities_path, class: "nav-item nav-link" %>
+      <%end%>
     </ul>
     <ul class="navbar-nav ml-auto">
       <% if current_user %>
-        <li class="nav-item dropdown font-weight-bold">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Hello <%= current_user.first_name%>
-          </a>
-        
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Profile</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Add Activity</a>
-            <a class="dropdown-item" href="#">List Activities</a>
-          </div>
-
+        <li class="nav-item nav-link">
+          <a class="nav-link font-weight-bolder"> Hello <%= current_user.first_name%> </a>
         </li>
-
+         
         <li class="nav-item">
           <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "btn btn-danger mr-auto m-2"%>
         </li>
