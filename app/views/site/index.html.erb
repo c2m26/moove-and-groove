@@ -1,23 +1,25 @@
-<div class="jumbotron jumbotron-fluid vh-100 fixed-top">
-    <div class="container">
-        <h1 class="display-4"><span class="highlight">Bring the Groove and join the Move</span></h1>
-        <p class="lead"><span class="highlight">Track your activities and establish new limits<span class="highlight"></p>
-        <div class="d-flex justify-content-start">
-            <% if user_signed_in?%>
-            <a href=<%=new_activity_path%> class="btn btn-secondary btn-lg m-2">New Activity</a>
-            <%= link_to 'Activity Tracker', activities_path, class: "btn btn-secondary btn-lg m-2" %>
-            <% else %>
-            <%= link_to 'Log In', new_user_session_path, class: "btn btn-primary btn-lg m-2"%>
-            <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary btn-lg m-2"%>
-            <%end%>
-        </div>
+<div class="jumbotron jumbotron-fluid fixed-top">
+    <div class="container d-flex flex-wrap flex-column align-items-start" style="height: 70vh;">
+            <h1 class="display-4"><span class="highlight">Bring the Groove and join the Move</span></h1>
+            <p class="lead "><span class="highlight">Track your activities and establish new limits<span class="highlight"></p>
+            <div class="d-flex justify-content-start">
+                <% if user_signed_in?%>
+                <a href=<%=new_activity_path%> class="btn btn-secondary btn-lg m-2">New Activity</a>
+                <%= link_to 'Activity Tracker', activities_path, class: "btn btn-secondary btn-lg m-2" %>
+                <% else %>
+                <%= link_to 'Log In', new_user_session_path, class: "btn btn-primary btn-lg m-2"%>
+                <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary btn-lg m-2"%>
+                <%end%>
+            </div>
+            <div class="d-flex flex-column mx-auto mt-auto">
+                    <h1 class="btn btn-primary btn-lg ">Move + Groove</h1>
+                    <h5 class="text-center text-white font-italic">Join the movement</h3>
+            </div>
+        
     </div>
 </div>
 
-<div class="container text-center">
-    <h1 class="text-primary">Move + Groove</h1>
-    <h3 class="text-primary font-italic">Join the movement</h3>
-</div>
+
 
 <div class="container-fluid mt-2 py-4" id="about">
     <div class="row">
@@ -27,15 +29,18 @@
         </div>
         
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex flex-column justify-content-center">
-            <div class="mx-auto">
-                <h2 class="text-secondary">Anytime, anywhere</h2>
-                <p>Keep track of your workouts and challenge your limits</p>
-                <p>Get online and record your workout</p>
-
-                <h2 class="text-secondary pt-3">Join the number one</h2>
-                <p>Move and Groove is the leading activity tracking webapp with</p>
-                <p>Over 10 activities supported</p>
-                <p>More than 100 000 active users</p>
+            <div class="row mx-auto">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex flex-column justify-content-center">
+                    <h2 class="btn btn-secondary btn-lg">Anytime, anywhere</h2>
+                    <p>Keep track of your workouts and challenge your limits</p>
+                    <p>Get online and record your workout</p>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex flex-column justify-content-center">
+                    <h2 class="btn btn-secondary btn-lg">The number one</h2>
+                    <p>Move and Groove is the leading activity tracking webapp</p>
+                    <p>Over 10 activities supported</p>
+                    <p>More than 100 000 active users</p>
+                </div>
             </div>
         </div>
            
