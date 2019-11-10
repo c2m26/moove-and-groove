@@ -1,37 +1,42 @@
-<div class="container">
-  <div class="card col-xl-4 col-lg-5 col-md-6 col-sm-8 col-8 mt-5 mx-auto shadow p-3 mb-5 bg-white rounded">
-    
-    <div class= "card-body mx-auto">
-      <h2 class="card-title">Log in</h2>
+<div id="vh" class="d-flex align-items-end flex-column">
+
+  <div id="vh-center" class="container d-flex align-items-center">
+    <div class="card col-xl-4 col-lg-5 col-md-6 col-sm-8 col-8 mt-5 mx-auto shadow p-3 mb-5 bg-white rounded">
       
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <div class= "card-body mx-auto">
+        <h2 class="card-title">Log in</h2>
         
-        </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          
+          </div>
 
-        <div class="form-group">
-          <%= f.label :password %>
-          <%= f.password_field :password, autocomplete: "current-password", class: "form-control"%>
-        </div>
+          <div class="form-group">
+            <%= f.label :password %>
+            <%= f.password_field :password, autocomplete: "current-password", class: "form-control"%>
+          </div>
 
-        <% if devise_mapping.rememberable? %>
-          <div class="form-group form-check">
-            <%= f.check_box :remember_me, class:"form-check-input" %>
-            <%= f.label :remember_me, class:"form-check-label" %>
+          <% if devise_mapping.rememberable? %>
+            <div class="form-group form-check">
+              <%= f.check_box :remember_me, class:"form-check-input" %>
+              <%= f.label :remember_me, class:"form-check-label" %>
+            </div>
+          <% end %>
+
+          <div class="actions">
+            <%= f.submit "Log in", class: "btn btn-primary mr-2"%>
+            <%= link_to 'Back', root_path, class: "btn btn-primary" %>
           </div>
         <% end %>
+          
+      </div>
 
-        <div class="actions">
-          <%= f.submit "Log in", class: "btn btn-primary mr-2"%>
-          <%= link_to 'Back', root_path, class: "btn btn-primary" %>
-        </div>
-      <% end %>
-        
     </div>
-
-    <!-- <%= render "devise/shared/links"%> -->
   </div>
+
+  <div id="footer_bottom" class="mt-auto"><%= render '/site/footer'%></div>
+
 </div>

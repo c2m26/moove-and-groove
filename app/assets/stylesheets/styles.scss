@@ -1,6 +1,6 @@
-*{
-    margin: 0;
-   }
+html, body{
+    height:100%;
+}
 
 .radio-button-selection input[type="radio"]{
     position: absolute;
@@ -18,15 +18,12 @@
     position: relative;
     z-index: 0;
     height: 85vh;
- }
+    margin-top:76px;
+}
 
  #jumbotextdiv{
      height: 70vh;
  }
-
-//.row{
-//     height: inherit;
-// }
 
 .display-4, .lead{
     color: white;
@@ -46,6 +43,18 @@
     color: rgb(148, 148, 148);
 }
 
-#navbar-spacer{
+// adjust contents to viewport
+
+#vh{
+    height: 100vh;
+    //padding-top: calc(1.2*76px);
+}
+
+#vh-center{
+    height: inherit;
     margin-top: 76px;
+}
+
+#footer_bottom{
+    width: 100%;
 }

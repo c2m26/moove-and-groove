@@ -1,38 +1,46 @@
-<div class="container col-xl-6 col-lg-9 col-md-9 col-sm-10 col-11">
-  <div class="card shadow p-3 mb-5 bg-white rounded ">
-      <div class= "card-body mx-auto">
-  
-      <h2 class="card-title text-primary"> Your activities</h2>
-  
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-          <tr class="text-center">
-            <th>Type</th>
-            <th>Date</th>
-            <th>Duration</th>
-            <th colspan="3" >Action</th>
-          </tr>
-          </thead>
-          
-          <tbody>
-          <% @activities.each do |activity| %>
-            <% if activity.user == current_user%>
-              <tr>
-                <td class="align-middle"><%= activity.name %></td>
-                <td class="align-middle"><%= activity.date %></td>
-                <td class="align-middle"><time datetime="<%= activity.duration %>"></time></td>
-                <td class="align-middle"><%= link_to 'Show', activity_path(activity), class: "btn btn-primary btn-sm" %></td>
-                <td class="align-middle"><%= link_to 'Edit', edit_activity_path(activity), class: "btn btn-primary btn-sm" %></td>
-                <td class="align-middle"><%= link_to 'Delete', activity_path(activity), class: "btn btn-danger btn-sm",
-                        method: :delete,
-                        data: { confirm: 'Are you sure?' } %></td>
+<div id="vh" class="d-flex align-items-end flex-column">
+
+  <div id="vh-center" class="container-fluid d-flex align-items-center">
+    <div class="container-fluid col-xl-6 col-lg-10 col-md-12 col-sm-12 col-12">
+      <div class="card shadow p-3 mb-5 bg-white rounded ">
+          <div class= "card-body mx-auto">
+      
+          <h2 class="card-title text-primary"> Your activities</h2>
+      
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+              <tr class="text-center">
+                <th>Type</th>
+                <th>Date</th>
+                <th>Duration</th>
+                <th colspan="3" >Action</th>
               </tr>
-            <%end%>
-          <% end %>
-          </tbody>
-        </table>
+              </thead>
+              
+              <tbody>
+              <% @activities.each do |activity| %>
+                <% if activity.user == current_user%>
+                  <tr>
+                    <td class="align-middle"><%= activity.name %></td>
+                    <td class="align-middle"><%= activity.date %></td>
+                    <td class="align-middle"><%= activity.duration %></td>
+                    <td class="align-middle"><%= link_to 'Show', activity_path(activity), class: "btn btn-primary btn-sm" %></td>
+                    <td class="align-middle"><%= link_to 'Edit', edit_activity_path(activity), class: "btn btn-primary btn-sm" %></td>
+                    <td class="align-middle"><%= link_to 'Delete', activity_path(activity), class: "btn btn-danger btn-sm",
+                            method: :delete,
+                            data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                <%end%>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <div id="footer_bottom" class="mt-auto"><%= render '/site/footer'%></div>
+
+ </div>
