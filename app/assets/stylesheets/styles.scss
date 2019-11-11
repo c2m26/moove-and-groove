@@ -58,3 +58,22 @@ html, body{
 #footer_bottom{
     width: 100%;
 }
+
+
+#activity {
+    border-style: solid;
+    border-radius: 50%;
+    border-color:#125B63;
+}
+
+#activity:hover {
+    border-radius: 50%;
+    background-color:#125B6333;
+}
+
+#activity:focus {
+    border-style: solid;
+    border-radius: 50%;
+    border-color:#960c5680;
+    z-index: 1;
+} 

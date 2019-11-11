@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card col-xl-12 col-lg-10 col-md-10 col-sm-10 col-10 mt-5 mx-auto shadow p-3 mb-5 bg-white rounded">
+  <div class="card col-xl-10 col-lg-11 col-md-10 col-sm-10 col-10 mt-5 mx-auto shadow p-3 mb-5 bg-white rounded">
     <div class="card-body mx-auto">
       <%= form_with model: @activity, local: true do |f| %>
         
@@ -20,74 +20,76 @@
         <h2 class="card-title text-primary">Activity</h2>
 
         <div class="form-group">
-          <div class="radio-button-selection d-flex flex-wrap justify-content-between">
-            <div>
-              <%= f.radio_button(:name, 'Swiming')%>
-              <%= f.label(:name_swiming, 'Swiming', class: "btn btn-primary") %>
+          <div class="radio-button-selection d-flex flex-wrap justify-content-center">
+            <div id="activity" class="m-2">
+              <%= f.radio_button(:name, 'swimming')%>
+              <%= f.label(:name_swimming, image_tag("swimming.png", alt: "swimming"), class: "m-2") %>
             </div>
 
-            <div>
-              <%= f.radio_button(:name, 'Running')%>
-              <%= f.label(:name_running, 'Running', class: "btn btn-primary") %>
+            <div  id="activity" class="m-2">
+              <%= f.radio_button(:name, 'running')%>
+              <%= f.label(:name_running, image_tag("running.png", alt: "running"), class: "m-2") %>
             </div>
 
-            <div>
-              <%= f.radio_button(:name, 'Walking')%>
-              <%= f.label(:name_walking, 'Walking', class: "btn btn-primary") %>
+            <div id="activity" class="m-2">
+              <%= f.radio_button(:name, 'badminton')%>
+              <%= f.label(:name_badminton, image_tag("badminton.png", alt: "badminton"), class: "m-2") %>
             </div>
 
-            <div>
-              <%= f.radio_button(:name, 'Cycling')%>
-              <%= f.label(:name_cycling, 'Cycling', class: "btn btn-primary") %>
+            <div id="activity" class="m-2">
+              <%= f.radio_button(:name, 'cycling')%>
+              <%= f.label(:name_cycling, image_tag("cycling.png", alt: "cycling"), class: "m-2") %>
             </div>
 
-            <div>
-              <%= f.radio_button(:name, 'Eliptical')%>
-              <%= f.label(:name_eliptical, 'Eliptical', class: "btn btn-primary") %>
+            <div id="activity" class="m-2">
+              <%= f.radio_button(:name, 'eliptical')%>
+              <%= f.label(:name_eliptical, image_tag("eliptical.png", alt: "eliptical"), class: "m-2") %>
             </div>
 
-            <div>
-              <%= f.radio_button(:name, 'Mountain Biking')%>
-              <%= f.label(:name_mountain_biking, 'Mountain Biking', class: "btn btn-primary") %>
+            <div id="activity" class="m-2">
+              <%= f.radio_button(:name, 'mountain_biking')%>
+              <%= f.label(:name_mountain_biking, image_tag("cycling.png", alt: "mountain_biking"), class: "m-2") %>
             </div>
 
-            <div>
-              <%= f.radio_button(:name, 'Rowing')%>
-              <%= f.label(:name_rowing, 'Rowing', class: "btn btn-primary") %>
+            <div id="activity" class="m-2">
+              <%= f.radio_button(:name, 'rowing')%>
+              <%= f.label(:name_rowing, image_tag("rowing.png", alt: "rowing"), class: "m-2") %>
             </div>
 
-            <div>
-              <%= f.radio_button(:name, 'Hiking')%>
-              <%= f.label(:name_hiking, 'Hiking', class: "btn btn-primary") %>
+            <div id="activity" class="m-2">
+              <%= f.radio_button(:name, 'hiking')%>
+              <%= f.label(:name_hiking, image_tag("hiking.png", alt: "hiking"), class: "m-2") %>
             </div>
 
-            <div>
-              <%= f.radio_button(:name, 'Downhill Skying')%>
-              <%= f.label(:name_downhill_skying, 'Downhill Skying', class: "btn btn-primary") %>
+            <div id="activity" class="m-2">
+              <%= f.radio_button(:name, 'skiing')%>
+              <%= f.label(:name_skiing, image_tag("skiing.png", alt: "skiing"), class: "m-2") %>
             </div>
 
-            <div>
-              <%= f.radio_button(:name, 'Snowboarding')%>
-              <%= f.label(:name_snowboarding, 'Snowboarding', class: "btn btn-primary") %>
+            <div id="activity" class="m-2">
+              <%= f.radio_button(:name, 'snowboarding')%>
+              <%= f.label(:name_snowboarding, image_tag("snowboarding.png", alt: "snowboarding"), class: "m-2") %>
             </div>
             
 
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="row">
+        <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
           <%= f.label Date %>
-          <%= f.date_field(:date)  %>
+          <%= f.date_field(:date, {class: "form-control"} ) %>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
           <%= f.label :duration %>
-          <%= f.time_field(:duration) %>
+          <%= f.time_field(:duration, {class: "form-control"} ) %>
+        </div>
         </div>
 
         <div class="actions" >
-          <%= f.submit class: "btn btn-secondary mr-2"%>
-          <%= link_to 'Back', activities_path, class: "btn btn-secondary" %>
+          <%= f.submit class: "btn btn-primary mr-2"%>
+          <%= link_to 'Back', activities_path, class: "btn btn-primary" %>
         </div>
         
         <% end %>
