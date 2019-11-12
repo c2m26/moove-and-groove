@@ -1,0 +1,43 @@
+<div id="vh" class="d-flex align-items-end flex-column">
+  
+    <div id="vh-center" class="container-fluid d-flex align-items-center justify-content-center">
+
+        <div class="card shadow p-3 bg-white rounded">
+            <div class= "card-body ">
+                <h2 class="card-title text-primary"><%= @user.first_name%> <%= @user.last_name%> </h2>
+                
+                <div class="row mt-4">
+                    <p class="font-weight-bold mr-2"> Birth date: </p>
+                    <%= @user.birth_Date %><br>
+                </div>
+
+                <div class="row">
+                    <p class="font-weight-bold mr-2"> Height:</p>
+                    <%= @user.height%>
+                    <p class="ml-2">cm</p>
+                </div>
+
+
+                <div class="row">
+                    <p class="font-weight-bold mr-2"> Weight:</p>
+                    <%= @user.weight %>
+                    <p class="ml-2">kg</p>
+                </div>
+                
+                
+            </div>
+            
+            <div class="actions form-group">
+                
+                <%= link_to 'Update',  edit_user_registration_path, class: "btn btn-primary" %>
+                <%= link_to 'Back', root_path, class: "btn btn-primary" %>
+            </div>
+
+
+        </div>
+    </div>
+  
+  
+  <div id="footer_bottom" class="mt-auto"><%= render '/site/footer'%></div>
+
+</div>
