@@ -1,46 +1,54 @@
-<div class="jumbotron jumbotron-fluid fixed-top">
-    <div class="container d-flex flex-wrap flex-column align-items-start" style="height: 70vh;">
-            <h1 class="display-4"><span class="highlight">Bring the Groove and join the Move</span></h1>
-            <p class="lead "><span class="highlight">Track your activities and establish new limits<span class="highlight"></p>
-            <div class="d-flex justify-content-start">
-                <% if user_signed_in?%>
-                <a href=<%=new_activity_path%> class="btn btn-secondary btn-lg m-2">New Activity</a>
-                <%= link_to 'Activity Tracker', activities_path, class: "btn btn-secondary btn-lg m-2" %>
-                <% else %>
-                <%= link_to 'Log In', new_user_session_path, class: "btn btn-primary btn-lg m-2"%>
-                <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary btn-lg m-2"%>
-                <%end%>
-            </div>
-            <div class="d-flex flex-column mx-auto mt-auto">
-                    <h1 class="btn btn-primary btn-lg active">Move + Groove</h1>
-                    <h5 class="text-center text-white font-italic">Join the movement</h3>
-            </div>
-        
+<div class="jumbotron jumbotron-fluid">
+    <div class="container d-flex flex-wrap flex-column align-items-start">
+        <h1 class="display-4"><span class="highlight">Bring the Groove and join the Move</span></h1>
+        <p class="lead "><span class="highlight">Track your activities and establish new limits<span class="highlight"></p>
+        <div class="d-flex justify-content-start">
+            <% if user_signed_in?%>
+            <a href=<%=new_activity_path%> class="btn btn-secondary btn-lg m-2">New Activity</a>
+            <%= link_to 'Activity Tracker', activities_path, class: "btn btn-secondary btn-lg m-2" %>
+            <% else %>
+            <%= link_to 'Log In', new_user_session_path, class: "btn btn-primary btn-lg m-2"%>
+            <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary btn-lg m-2"%>
+            <%end%>
+        </div>
     </div>
 </div>
 
 
+<div class="container">
+    <h1 class="text-center text-primary">Move + Groove</h1>
+    <h5 class="text-center text-muted font-italic">Join the movement</h3>
+</div>
 
-<div class="container-fluid mt-2 py-4" id="about">
-    <div class="row">
+<div class="container mt-2 py-4" id="about">
+    <div class="card-deck">
         
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center">
-            <%= image_tag "runningvector_md.jpeg"%>
+        <div class="card">
+            
+            <h5 class="card-header bg-secondary text-white">The number 1</h5>
+            <%=image_tag("numberone_fit.jpg", class:"card-img-top", alt: "numberone")%>
+           
+            <div class="card-body">
+                <p class="card-text">Move and Groove is the leading activity tracking webapp</p>
+                <p class="card-text">More than <span class="font-weight-bold">10 000 000</span> active users</p>
+            </div>
         </div>
         
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex flex-column justify-content-center">
-            <div class="row mx-auto">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex flex-column justify-content-center">
-                    <h2 class="btn btn-secondary btn-lg">Anytime, anywhere</h2>
-                    <p>Keep track of your workouts and challenge your limits</p>
-                    <p>Get online and record your workout</p>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex flex-column justify-content-center">
-                    <h2 class="btn btn-secondary btn-lg">The number one</h2>
-                    <p>Move and Groove is the leading activity tracking webapp</p>
-                    <p>Over 10 activities supported</p>
-                    <p>More than 100 000 active users</p>
-                </div>
+        <div class="card">
+            <h5 class="card-header bg-secondary text-white">Anytime, anywhere</h5>
+            <%=image_tag("anywhere_fit.jpg", class:"card-img-top", alt: "anywhere")%>
+            <div class="card-body">
+                <p class="card-text">Keep track of your workouts and challenge your limits</p>
+                <p class="card-text">Over <span class="font-weight-bold">10 activities</span> supported</p>
+            </div>
+        </div>
+
+            <div class="card">
+            <h5 class="card-header bg-secondary text-white">Happy Users</h5>
+            <%=image_tag("happy_fit.jpg", class:"card-img-top", alt: "anywhere")%>
+            <div class="card-body">
+                <p class="card-text">Over 85% consider the app improved their workout tracking</p>
+                <p class="card-text">More than 95% would recommend it righ away!</p>
             </div>
         </div>
            

@@ -1,8 +1,8 @@
-<div id="vh" class="d-flex align-items-end flex-column">
+<div id="vh" class="d-flex justify-content-center flex-column">
   
-  <div id="vh-center" class="container-fluid d-flex align-items-center justify-content-center">
+  <div class="d-flex align-items-center justify-content-center flex-fill">
 
-    <div class="card shadow p-3 bg-white rounded">
+    <div class="card shadow p-3 bg-white rounded mx-2">
       <div class= "card-body ">
         <h2 class="card-title">Sign up</h2>
         
@@ -21,22 +21,22 @@
           </div>
 
           <div class="form-row">
-            <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12 form-group form-inline">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 form-group form-inline">
               <%= f.label :birth_Date, class: "mr-2" %><br>
-              <%= f.date_select :birth_Date, {:start_year=>1910}, {class: "form-control mr-2"} %>
+              <%= f.date_select :birth_Date, {:start_year=>1910}, {class: "form-control m-1"} %>
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 form-group form-inline">
+          <div class="form-row ">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 form-group">
               <%= f.label :height, class: "mr-2" %>
-              <%= f.number_field :height, class: "form-control mr-2", placeholder:"in cm" %>
+              <%= f.number_field :height, class: "form-control", placeholder:"in cm" %>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 form-group form-inline">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 form-group">
               <%= f.label :weight, class: "mr-2" %>
-              <%= f.number_field :weight, class: "form-control mr-2", placeholder:"in kg" %>
+              <%= f.number_field :weight, class: "form-control ", placeholder:"in kg" %>
             </div>
-            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3 col-3 form-group form-inline">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 form-group">
               <%= f.label 'Gender', class: "mr-2" %>
               <%= f.select(:sex, options_for_select([['Male', 1], ['Female', 2], ['Neutral', 3]]), {}, {class: "form-control"}) %>
             </div>
@@ -45,7 +45,7 @@
           <div class="form-row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-group">
               <%= f.label :email, class: "mr-2" %>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mr-4", placeholder: "johndoe@mail.com" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control ", placeholder: "johndoe@mail.com" %>
             </div>
           </div>  
           
@@ -55,7 +55,7 @@
               <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %>
-              <%= f.password_field :password, autocomplete: "new-password", class: "form-control mr-4" %>
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control " %>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 form-group">
               <%= f.label :password_confirmation, class: "mr-2" %><br />

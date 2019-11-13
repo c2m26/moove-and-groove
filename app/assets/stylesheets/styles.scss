@@ -17,14 +17,12 @@ html, body{
     background-size: cover;
     position: relative;
     z-index: 0;
-    height: 85vh;
-    margin-top:76px;
+    height: 70vh;
+    min-height: 550px;
+    
 }
 
- #jumbotextdiv{
-     height: 70vh;
- }
-
+ 
 .display-4, .lead{
     color: white;
 }
@@ -46,17 +44,12 @@ html, body{
 // adjust contents to viewport
 
 #vh{
-    height: 100vh;
-    //padding-top: calc(1.2*76px);
+    min-height: calc(100vh - 76px);
 }
 
-#vh-center{
-    height: inherit;
-    margin-top: 76px;
-}
 
 #footer_bottom{
-    width: 100%;
+    min-width: 100%;
 }
 
 
@@ -76,4 +69,20 @@ html, body{
     border-radius: 50%;
     border-color:#960c5680;
     z-index: 1;
-} 
+}
+
+#imgresp{
+    max-width: 100% !important;
+    height: auto;
+}
+
+
+// MEDIA QUERIES 
+
+// adjust content height in relation to viewport and avoid messed up views with overalping contents
+
+@media only screen and (max-height: 960px) and (max-width: 860px) {
+    #vh {
+      height: auto ;
+    }
+  }

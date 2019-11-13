@@ -1,37 +1,37 @@
-<div id="vh" class="d-flex align-items-end flex-column">
+<div id="vh" class="d-flex justify-content-center flex-column">
 
-    <div id="vh-center" class="container d-flex align-items-center">
-        <div class="card col-xl-4 col-lg-6 col-md-7 col-sm-10 col-10 mt-5 mx-auto shadow p-3 mb-5 bg-white rounded">
+    <div class="d-flex align-items-center justify-content-center flex-fill">
+        <div class="card shadow p-3 bg-white rounded mx-2">
         
-            <div class= "card-body mx-auto">
-                <h2 class="card-title text-primary">Your activity details</h2>
+            <div class= "card-body">
+                <h2 class="card-title text-primary">Activity details</h2>
             
                 <div class="mt-4">
                     <div class="row pt-2">
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><strong>Activity</strong></div>
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><%=@activity.name%></div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-5"><strong>Activity</strong></div>
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-7 col-7"><%=@activity.name%></div>
                     </div>
                     
                     <div class="row pt-2">
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><strong>Date</strong></div>
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><%=@activity.date%></div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-5"><strong>Date</strong></div>
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-7 col-7"><%=@activity.date%></div>
                     </div>
 
                     <div class="row pt-2">
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><strong>Duration</strong></div>
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><%=@activity.duration%></div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-5"><strong>Duration</strong></div>
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-7 col-7"><%=@activity.duration%></div>
                     </div>
                 </div>
             
                 <div class="mt-4">
-                    <%= link_to 'Edit', edit_activity_path, class: "btn btn-secondary mr-2" %>
-                    <%= link_to 'Back', activities_path, class: "btn btn-secondary" %>
+                    <%= link_to 'Edit', edit_activity_path, class: "btn btn-primary mr-2" %>
+                    <%= link_to 'Back', activities_path, class: "btn btn-primary" %>
                 </div>
 
             </div>
         </div>
     </div>
 
-    <div id="footer_bottom" class="mt-auto"><%= render '/site/footer'%></div>
+    <div id="footer_bottom"><%= render '/site/footer'%></div>
 
  </div>

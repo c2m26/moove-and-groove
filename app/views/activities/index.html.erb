@@ -1,14 +1,14 @@
-<div id="vh" class="d-flex align-items-end flex-column">
+<div id="vh" class="d-flex justify-content-center flex-column">
 
-  <div id="vh-center" class="container-fluid d-flex align-items-center">
-    <div class="container-fluid col-xl-5 col-lg-8 col-md-10 col-sm-12 col-12">
-      <div class="card shadow p-3 mb-5 bg-white rounded ">
-          <div class= "card-body mx-auto">
+  <div class="d-flex justify-content-center align-items-center flex-fill">
+    
+      <div class="card shadow p-3 bg-white rounded mx-2">
+          <div class= "card-body">
       
           <h2 class="card-title text-primary"> Your activities</h2>
       
-          <div class="table-responsive">
-            <table class="table">
+          
+            <table class=" table-responsive table table-hover">
               <thead>
               <tr class="text-center">
                 <th>Type</th>
@@ -21,7 +21,7 @@
               <tbody>
               <% @activities.each do |activity| %>
                 <% if activity.user == current_user%>
-                  <tr>
+                  <tr >
                     <td class="align-middle"><%=image_tag(activity.name)%></td>
                     <td class="align-middle"><%= activity.date %></td>
                     <td class="align-middle"><%= activity.duration %></td>
@@ -35,12 +35,19 @@
               <% end %>
               </tbody>
             </table>
+          
+          <div class="mt-4">
+            <%= link_to 'New', new_activity_path, class: "btn btn-primary mr-2" %>
+            <%= link_to 'Back', root_path, class: "btn btn-primary" %>
           </div>
+
         </div>
+      
+          
       </div>
-    </div>
+    
   </div>
 
-  <div id="footer_bottom" class="mt-auto"><%= render '/site/footer'%></div>
+  <div id="footer_bottom"><%= render '/site/footer'%></div>
 
  </div>

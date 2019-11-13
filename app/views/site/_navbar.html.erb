@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
-  <a class="navbar-brand" href="/"> <%= image_tag "movegroove-logo-sm.png" %> </a>
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white">
+  <a class="navbar-brand" href="/"> <%= image_tag "movegroove-logo-sm.png", id: "imgresp" %> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,10 +18,10 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <% if current_user %>
-        <li class="nav-item nav-link">
-          <a class="nav-link font-weight-bolder"> Hello <%= current_user.first_name%> </a>
+        <li class="nav-item nav-link dropdown">
+          <a class="nav-link font-weight-bolder" href=<%=profile_path%>> Hello <%= current_user.first_name%> </a>
         </li>
-         
+      
         <li class="nav-item">
           <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "btn btn-danger mr-auto m-2"%>
         </li>

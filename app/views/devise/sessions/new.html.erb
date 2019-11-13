@@ -1,9 +1,9 @@
-<div id="vh" class="d-flex align-items-end flex-column">
+<div id="vh" class="d-flex justify-content-center flex-column">
 
-  <div id="vh-center" class="container d-flex align-items-center">
-    <div class="card col-xl-4 col-lg-5 col-md-6 col-sm-8 col-8 mt-5 mx-auto shadow p-3 mb-5 bg-white rounded">
+  <div class="d-flex align-items-center justify-content-center flex-fill">
+    <div class="card shadow p-3 bg-white rounded mx-2">
       
-      <div class= "card-body mx-auto">
+      <div class= "card-body">
         <h2 class="card-title">Log in</h2>
         
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -37,6 +37,7 @@
     </div>
   </div>
 
-  <div id="footer_bottom" class="mt-auto"><%= render '/site/footer'%></div>
+<div id="footer_bottom"><%= render '/site/footer'%></div>  
 
 </div>
+
