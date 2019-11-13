@@ -24,7 +24,7 @@
                   <tr >
                     <td class="align-middle"><%=image_tag(activity.name)%></td>
                     <td class="align-middle"><%= activity.date %></td>
-                    <td class="align-middle"><%= activity.duration %></td>
+                    <td class="align-middle"><%= '%02d' % activity.duration.hour %>:<%= '%02d' % activity.duration.min %></td>
                     <td class="align-middle"><%= link_to 'Show', activity_path(activity), class: "btn btn-primary btn-sm" %></td>
                     <td class="align-middle"><%= link_to 'Edit', edit_activity_path(activity), class: "btn btn-primary btn-sm" %></td>
                     <td class="align-middle"><%= link_to 'Delete', activity_path(activity), class: "btn btn-danger btn-sm",

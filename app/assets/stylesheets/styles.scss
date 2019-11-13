@@ -50,6 +50,7 @@ html, body{
 
 #footer_bottom{
     min-width: 100%;
+    font-size: 0.75rem;
 }
 
 
@@ -64,11 +65,9 @@ html, body{
     background-color:#125B6333;
 }
 
-#activity:focus {
-    border-style: solid;
+#activity:checked {
     border-radius: 50%;
-    border-color:#960c5680;
-    z-index: 1;
+    background-color:#125B6333;
 }
 
 #imgresp{
@@ -81,8 +80,10 @@ html, body{
 
 // adjust content height in relation to viewport and avoid messed up views with overalping contents
 
-@media only screen and (max-height: 960px) and (max-width: 860px) {
-    #vh {
-      height: auto ;
+@media only screen and (max-width: 440px){
+   #footer {
+        justify-content: center;
+        ml-auto: none !important;
+
     }
-  }
+}
