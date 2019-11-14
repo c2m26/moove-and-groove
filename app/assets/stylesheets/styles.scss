@@ -7,6 +7,11 @@ html, body{
     display: none;
 }
 
+.radio-button-selection input[type="radio"]:checked+label{
+    border-radius: 50%;
+    background-color:#125B6333;
+}
+
 .jumbotron{
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.1),
@@ -58,14 +63,10 @@ html, body{
     border-style: solid;
     border-radius: 50%;
     border-color:#125B63;
+
 }
 
 #activity:hover {
-    border-radius: 50%;
-    background-color:#125B6333;
-}
-
-#activity:checked {
     border-radius: 50%;
     background-color:#125B6333;
 }
@@ -83,7 +84,5 @@ html, body{
 @media only screen and (max-width: 440px){
    #footer {
         justify-content: center;
-        ml-auto: none !important;
-
-    }
+     }
 }
