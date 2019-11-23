@@ -31,7 +31,7 @@ class ActivitiesController < ApplicationController
 
     def update
         @activity = Activity.find(params[:id])
-        if activity.update(activity_params)
+        if @activity.update(activity_params)
             redirect_to @activity
         else
             render 'edit'
